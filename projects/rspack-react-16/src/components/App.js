@@ -22,7 +22,7 @@ class App extends React.Component {
     console.log(__webpack_share_scopes__)
     return (
       <div>
-        <h1>Basic Host-Remote</h1>
+        <h1>Basic Host-Remote from react 16</h1>
         <h2>App 1, Uses react version not compatible with hooks</h2>
         <input onChange={this.setValue} placeholder="Type something into this input" />
 
