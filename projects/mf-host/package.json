@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@empjs/cli": "*",
+    "@empjs/cli": "3.0.0-rc.11",
     "@types/react": "^18.2.30",
     "@types/react-dom": "^18.2.14"
   },
