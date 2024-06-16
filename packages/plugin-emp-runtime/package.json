@@ -1,6 +1,6 @@
 {
   "name": "@empjs/plugin-emp-runtime",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "empShare runtime plugin",
   "license": "MIT",
   "type": "module",

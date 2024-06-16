@@ -16,7 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "@empjs/cli": "3.0.0",
-    "@empjs/plugin-react": "3.0.0-rc.11",
+    "@empjs/plugin-react": "3.0.0",
     "@types/react": "^18.2.30",
     "@types/react-dom": "^18.2.14"
   },

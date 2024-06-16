@@ -76,7 +76,7 @@ importers:
     dependencies:
       '@empjs/plugin-emp-runtime':
         specifier: 0.0.3
-        version: link:../../packages/plugin-emp-runtime
+        version: 0.0.3
       mobx:
         specifier: ^6.12.3
         version: 6.12.3
@@ -94,8 +94,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(less@4.2.0)(ts-node@10.9.2)(typescript@5.4.3)(webpack@5.90.3)
       '@empjs/plugin-react':
-        specifier: 3.0.0-rc.11
-        version: 3.0.0-rc.11(typescript@5.4.3)
+        specifier: 3.0.0
+        version: 3.0.0(typescript@5.4.3)
       '@types/react':
         specifier: ^16.9.9
         version: 16.14.60
@@ -116,8 +116,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(less@4.2.0)(ts-node@10.9.2)(typescript@5.4.3)(webpack@5.90.3)
       '@empjs/plugin-react':
-        specifier: 3.0.0-rc.11
-        version: 3.0.0-rc.11(typescript@5.4.3)
+        specifier: 3.0.0
+        version: 3.0.0(typescript@5.4.3)
       '@types/react':
         specifier: ^18.2.30
         version: 18.2.67
@@ -138,8 +138,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(less@4.2.0)(ts-node@10.9.2)(typescript@5.4.3)(webpack@5.90.3)
       '@empjs/plugin-react':
-        specifier: 3.0.0-rc.11
-        version: 3.0.0-rc.11(typescript@5.4.3)
+        specifier: 3.0.0
+        version: 3.0.0(typescript@5.4.3)
       '@types/react':
         specifier: ^18.2.30
         version: 18.2.67
@@ -2103,11 +2103,22 @@ packages:
       - typescript
     dev: true
 
-  /@empjs/plugin-react@3.0.0-rc.11(typescript@5.4.3):
-    resolution: {integrity: sha512-CF10QaS8w6oC9dPY3u2CfEgB6rMlhS3l9nirAmbx8x7YTFHlSpUUiXYucwCnVIaitq2ORubmmsPvt5hls8qEfQ==}
+  /@empjs/plugin-emp-runtime@0.0.3:
+    resolution: {integrity: sha512-JyjUR3PAr9+QD8WuUUeUI4hMLYwcaa8/ls9ugcTZx+pLuNtTh0u4WaMFvmAl9gFVXSxX0upWloV3kjFQLjybTQ==}
     engines: {node: '>=20.0.0'}
     dependencies:
-      '@rspack/plugin-react-refresh': 0.6.5(react-refresh@0.14.2)
+      '@module-federation/runtime': 0.1.19
+      '@module-federation/sdk': 0.1.19
+      core-js: 3.37.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@empjs/plugin-react@3.0.0(typescript@5.4.3):
+    resolution: {integrity: sha512-fTWazGyUMuT9AMWjnQmiLkr2Vf7uRbpLJzpDezzPU51+Ka/8JfG7QAIk7kxTQG9OaZsSKSIDFwSZXr9aE6qMTQ==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@rspack/plugin-react-refresh': 0.7.0(react-refresh@0.14.2)
       '@svgr/webpack': 8.1.0(typescript@5.4.3)
       react-refresh: 0.14.2
     transitivePeerDependencies:
@@ -2678,7 +2689,7 @@ packages:
       '@module-federation/runtime-tools': 0.1.19
       '@module-federation/sdk': 0.1.19
       upath: 2.0.1
-      webpack: 5.90.3(@swc/core@1.4.14)(esbuild@0.19.12)
+      webpack: 5.90.3(webpack-cli@4.10.0)
     transitivePeerDependencies:
       - bufferutil
       - debug
@@ -2797,7 +2808,6 @@ packages:
     resolution: {integrity: sha512-5yjv8+4dluJ/ViTpOb5/Opzih/YlDB6N/ccDZUHHkNi3H95Rdd6Rh5Xfb/Y/peXNk1aA0O6jlqtxVTMjr1X8rA==}
     dependencies:
       '@module-federation/sdk': 0.1.19
-    dev: true
 
   /@module-federation/runtime@0.1.6:
     resolution: {integrity: sha512-nj6a+yJ+QxmcE89qmrTl4lphBIoAds0PFPVGnqLRWflwAP88jrCcrrTqRhARegkFDL+wE9AE04+h6jzlbIfMKg==}
@@ -2819,7 +2829,6 @@ packages:
 
   /@module-federation/sdk@0.1.19:
     resolution: {integrity: sha512-vkahNtZPjG8D9kDNqNmfsVf18vgUj8XcjriqcO/AVCQhEa8uVCmu/+yxFDc3XaYfsmyUTrS8dlI8+9sr6aMjLw==}
-    dev: true
 
   /@module-federation/sdk@0.1.6:
     resolution: {integrity: sha512-qifXpyYLM7abUeEOIfv0oTkguZgRZuwh89YOAYIZJlkP6QbRG7DJMQvtM8X2yHXm9PTk0IYNnOJH0vNQCo6auQ==}
@@ -3348,8 +3357,8 @@ packages:
       react-refresh: 0.14.0
     dev: true
 
-  /@rspack/plugin-react-refresh@0.6.5(react-refresh@0.14.2):
-    resolution: {integrity: sha512-H7V54qtdJvBQXSL209ep3cNoeDk8Ljid7+AGeJIXj5nu3ZIF4TYYDFeiyZtn7xCIgeyiYscuQZ0DKb/qXFYqog==}
+  /@rspack/plugin-react-refresh@0.7.0(react-refresh@0.14.2):
+    resolution: {integrity: sha512-IRk4W0v0Nc0thxbHz1kordb3Gk8liHPoDY+peDSLSel6847qaoiDM7LhuenZzgHxlPo7ZzmZufdi2o0fyjcN0Q==}
     peerDependencies:
       react-refresh: '>=0.10.0 <1.0.0'
     peerDependenciesMeta:
@@ -7512,7 +7521,7 @@ packages:
       lodash: 4.17.21
       pretty-error: 4.0.0
       tapable: 2.2.1
-      webpack: 5.90.3(@swc/core@1.4.14)(esbuild@0.19.12)
+      webpack: 5.90.3(webpack-cli@4.10.0)
     dev: true
 
   /htmlparser2@6.1.0:
@@ -8288,7 +8297,7 @@ packages:
     dependencies:
       '@rspack/core': 0.7.0(@swc/helpers@0.5.11)
       less: 4.2.0
-      webpack: 5.90.3(@swc/core@1.4.14)(esbuild@0.19.12)
+      webpack: 5.90.3(webpack-cli@4.10.0)
     dev: true
 
   /less@4.2.0:
@@ -10228,7 +10237,7 @@ packages:
       '@rspack/core': 0.7.0(@swc/helpers@0.5.11)
       neo-async: 2.6.2
       sass-embedded: 1.77.5
-      webpack: 5.90.3(@swc/core@1.4.14)(esbuild@0.19.12)
+      webpack: 5.90.3(webpack-cli@4.10.0)
     dev: true
 
   /sass@1.72.0:
@@ -11795,7 +11804,7 @@ packages:
       mime-types: 2.1.35
       range-parser: 1.2.1
       schema-utils: 4.2.0
-      webpack: 5.90.3(@swc/core@1.4.14)(esbuild@0.19.12)
+      webpack: 5.90.3(webpack-cli@4.10.0)
     dev: true
 
   /webpack-dev-server@4.13.1(webpack-cli@4.10.0)(webpack@5.90.3):
