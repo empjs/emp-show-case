@@ -5,7 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "showcase:fastmode": "pnpm --filter @empjs/plugin-emp-runtime --filter emp-runtime-react-16-app  dev"
   },
   "keywords": [],
   "author": "",
