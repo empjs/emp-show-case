@@ -1,31 +1,12 @@
+// import pluginEmpRuntime from '@empjs/plugin-emp-runtime'
 import {defineConfig} from '@empjs/cli'
+import pluginReact from '@empjs/plugin-react'
+
 const defaultFn = defineConfig(store => {
-  const isESM = false
-  const shareLib =
-    store.mode === 'development'
-      ? {
-          react: 'React@https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.min.js',
-          'react-dom': 'ReactDOM@https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js',
-        }
-      : {
-          react: 'React@https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js',
-          'react-dom': 'ReactDOM@https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js',
-        }
-  const shared = {
-    react: {
-      singleton: true,
-    },
-    'react-dom': {
-      singleton: true,
-    },
-  }
-  const shareMethod = isESM ? {shareLib} : {shared}
+  const ip = store.getLanIp()
+  const runtimeHost = `http://${ip}:3011`
   return {
-    build: {
-      polyfill: 'usage',
-      // 支持 默认的浏览器兼容性配置
-      browserslist: store.browserslistOptions.h5,
-    },
+    plugins: [pluginReact()],
     html: {
       template: 'src/index.html',
     },
@@ -36,16 +17,27 @@ const defaultFn = defineConfig(store => {
       port: 8001,
     },
     debug: {
-      clearLog: false,
+      // clearLog: false,
+      // showRsconfig: 'rs.config.json',
       // showRsconfig: true,
     },
+    // externals: {'@empjs/plugin-emp-runtime': 'EmpShareLib'},
     empShare: {
-      // mfVersion: 1,
       name: 'mfHost',
-      exposes: {
-        './App': './src/App',
+      dts: true,
+      fastMode: {
+        runtimeHost,
+        //不同版本react 不能设置 防止被篡改
+        framework: '',
       },
-      ...shareMethod,
+      shared: {
+        react: {
+          requiredVersion: '^18.2.0',
+        },
+        'react-dom': {
+          requiredVersion: '^18.2.0',
+        },
+      },
     },
   }
 })

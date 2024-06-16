@@ -6,7 +6,7 @@ const isCf = true
 //
 export default defineConfig(store => {
   const ip = store.getLanIp()
-  const mfhost = isCf ? 'https://mf-cjs.sc.empjs.dev/host/emp.js' : `http://${ip}:8001/emp.js`
+  const mfhost = `http://${ip}:8001/emp.js`
   const runtimeHost = `http://${ip}:3011`
   return {
     html: {

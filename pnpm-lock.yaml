@@ -174,6 +174,12 @@ importers:
       core-js:
         specifier: ^3.36.1
         version: 3.36.1
+      mobx:
+        specifier: ^6.12.3
+        version: 6.12.3
+      mobx-react:
+        specifier: ^9.1.1
+        version: 9.1.1(mobx@6.12.3)(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -184,6 +190,12 @@ importers:
       '@empjs/cli':
         specifier: 3.0.0
         version: 3.0.0(less@4.2.0)(ts-node@10.9.2)(typescript@5.4.3)(webpack@5.90.3)
+      '@empjs/plugin-emp-runtime':
+        specifier: workspace:*
+        version: link:../../packages/plugin-emp-runtime
+      '@empjs/plugin-react':
+        specifier: 3.0.0
+        version: 3.0.0(typescript@5.4.3)
       '@types/react':
         specifier: ^18.2.30
         version: 18.2.67
@@ -8781,6 +8793,25 @@ packages:
       use-sync-external-store: 1.2.2(react@16.14.0)
     dev: false
 
+  /mobx-react-lite@4.0.7(mobx@6.12.3)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-RjwdseshK9Mg8On5tyJZHtGD+J78ZnCnRaxeQDSiciKVQDUbfZcXhmld0VMxAwvcTnPEHZySGGewm467Fcpreg==}
+    peerDependencies:
+      mobx: ^6.9.0
+      react: ^16.8.0 || ^17 || ^18
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      mobx: 6.12.3
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      use-sync-external-store: 1.2.2(react@18.2.0)
+    dev: false
+
   /mobx-react@9.1.1(mobx@6.12.3)(react-dom@16.14.0)(react@16.14.0):
     resolution: {integrity: sha512-gVV7AdSrAAxqXOJ2bAbGa5TkPqvITSzaPiiEkzpW4rRsMhSec7C2NBCJYILADHKp2tzOAIETGRsIY0UaCV5aEw==}
     peerDependencies:
@@ -8798,6 +8829,25 @@ packages:
       mobx-react-lite: 4.0.7(mobx@6.12.3)(react-dom@16.14.0)(react@16.14.0)
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
+    dev: false
+
+  /mobx-react@9.1.1(mobx@6.12.3)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-gVV7AdSrAAxqXOJ2bAbGa5TkPqvITSzaPiiEkzpW4rRsMhSec7C2NBCJYILADHKp2tzOAIETGRsIY0UaCV5aEw==}
+    peerDependencies:
+      mobx: ^6.9.0
+      react: ^16.8.0 || ^17 || ^18
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      mobx: 6.12.3
+      mobx-react-lite: 4.0.7(mobx@6.12.3)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /mobx@6.12.3:
@@ -11401,6 +11451,14 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 16.14.0
+    dev: false
+
+  /use-sync-external-store@1.2.2(react@18.2.0):
+    resolution: {integrity: sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /util-deprecate@1.0.2:

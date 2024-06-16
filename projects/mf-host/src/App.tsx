@@ -1,11 +1,20 @@
-import {useState} from 'react'
+import {useState, version} from 'react'
+import './App.css'
 import ReactLogo from './assets/react.svg'
 import ReactInline from './assets/react.svg?inline'
-import './App.css'
 
-function App() {
+import {CountComp, ShowCountComp} from './CountComp'
+import Section from './component/Section'
+//
+type AppType = {
+  from?: string
+  version?: string
+  component?: any
+  nameformRemote?: string
+}
+
+function App(o: AppType) {
   const [count, setCount] = useState(0)
-
   return (
     <div className="App">
       <div>
@@ -14,14 +23,15 @@ function App() {
           {/* <ReactLogo /> */}
         </a>
       </div>
-      <h1>EMP 3.0 + React + TypeScript!</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the emp and React logos to learn more</p>
+      <h1>EMP 3.0 React {version}</h1>
+      <ShowCountComp />
+      {o.from ? <p>{o.from}</p> : ''}
+      {o.nameformRemote ? <p>{o.nameformRemote}</p> : ''}
+      {o.version ? <p>React Version {o.version}</p> : ''}
+      <h2>Inject Diff Component</h2>
+      {o.component && <o.component />}
+      <Section />
+      <CountComp />
       <h2>Image List</h2>
       <div className="imageList">
         <span>
