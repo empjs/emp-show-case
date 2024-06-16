@@ -1,0 +1,76 @@
+{
+  "name": "@empjs/plugin-emp-runtime",
+  "version": "0.0.3",
+  "description": "empShare runtime plugin",
+  "license": "MIT",
+  "type": "module",
+  "files": ["dist"],
+  "maintainers": ["ckken@qq.com"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/empjs/emp.git",
+    "directory": "packages/plugin-emp-runtime"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/plugin.js",
+  "types": "dist/plugin.d.ts",
+  "exports": {
+    ".": {
+      "default": "./dist/plugin.js",
+      "types": "./dist/plugin.d.ts"
+    },
+    "./runtime": {
+      "import": {
+        "types": "./dist/runtime.d.ts",
+        "default": "./dist/runtime.mjs"
+      },
+      "require": {
+        "types": "./dist/runtime.d.cts",
+        "default": "./dist/runtime.cjs"
+      }
+    },
+    "./*": ["./*", "./*.d.ts"]
+  },
+  "typesVersions": {
+    "*": {
+      "*": ["./dist/*", "./*"]
+    }
+  },
+  "scripts": {
+    "dev": "rimraf dist && pnpm run /^dev:.*/",
+    "dev:plugin": "cross-env  NODE_ENV=development WATCH=true TYPE=plugin tsup",
+    "dev:lib-dev": "cross-env  NODE_ENV=development WATCH=true TYPE=lib tsup",
+    "dev:lib-prod": "cross-env  NODE_ENV=production WATCH=true TYPE=lib tsup",
+    "dev:serve": "serve ./dist --cors -p 3011",
+    "build": "rimraf dist && pnpm run /^build:.*/",
+    "build:plugin": "cross-env NODE_ENV=production WATCH=false TYPE=plugin tsup",
+    "build:lib-dev": "cross-env NODE_ENV=development WATCH=false TYPE=lib tsup",
+    "build:li-prod": "cross-env NODE_ENV=production WATCH=false TYPE=lib tsup",
+    "start": "serve ./dist --cors -p 3011"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "Ken",
+  "dependencies": {
+    "@module-federation/runtime": "^0.1.9",
+    "@module-federation/sdk": "^0.1.9",
+    "core-js": "^3.37.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@empjs/cli": "3.0.0",
+    "@swc/core": "^1.4.14",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "cross-env": "^7.0.3",
+    "rimraf": "^5.0.5",
+    "serve": "^14.2.1",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  }
+}
