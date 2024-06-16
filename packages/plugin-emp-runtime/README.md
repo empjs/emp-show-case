@@ -22,7 +22,7 @@ export default defineConfig(store => {
 import React, {useEffect, useState, version} from 'react'
 import ReactDOM from 'react-dom'
 // 引用runtime
-import {empRuntime, withReactAdepter} from '@empjs/plugin-emp-runtime/runtime'
+import {empRuntime, withReactAdapter} from '@empjs/plugin-emp-runtime/runtime'
 // 实例化远程 emp
 empRuntime.init({
   remotes: [
@@ -34,7 +34,7 @@ empRuntime.init({
   name: 'federationRuntimeDemo',
 })
 // 封装 React 18的组件 以便插入到 React 16
-const RemoteApp = withReactAdepter<any>(empRuntime.load('mfHost/App'))
+const RemoteApp = withReactAdapter<any>(empRuntime.load('mfHost/App'))
 // 创建 React 16 组件
 const ParentComponent = () => {
   const [count, setCount] = useState(0)
@@ -46,7 +46,7 @@ const ParentComponent = () => {
   )
 }
 // 封装 React 16的组件 以便插入到 React 18
-const ParentComponentAdepter = withReactAdepter(ParentComponent, React, ReactDOM)
+const ParentComponentAdepter = withReactAdapter(ParentComponent, React, ReactDOM)
 const App = () => {
   return (
     <>

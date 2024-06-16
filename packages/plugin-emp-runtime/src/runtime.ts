@@ -6,6 +6,6 @@ import * as MFSDK from '@module-federation/sdk'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import empRuntime from './empRuntime'
-import withReactAdepter from './withReactAdepter'
+import withReactAdapter from './withReactAdapter'
 //
-export {empRuntime, loadRemote, React, ReactDOM, MFRuntime, MFSDK, withReactAdepter}
+export {empRuntime, loadRemote, React, ReactDOM, MFRuntime, MFSDK, withReactAdapter}

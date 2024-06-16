@@ -5,7 +5,7 @@ import {createRoot, hydrateRoot} from 'react-dom/client'
 const checkVersion = (version: string) => (version ? Number(version.split('.')[0]) : 0)
 const isPromise = (p: any) => p && Object.prototype.toString.call(p) === '[object Promise]'
 
-function withReactAdepter<P>(
+function withReactAdapter<P>(
   component: any,
   scope = 'default',
   React: any = LocalReact,
@@ -70,4 +70,4 @@ function withReactAdepter<P>(
   }
   return WrappedComponent as unknown as (props: P) => any
 }
-export default withReactAdepter
+export default withReactAdapter
