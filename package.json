@@ -7,7 +7,6 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "pnpm run /^dev:.*/",
-    "dev:plugin-emp-runtime": "pnpm --filter @empjs/plugin-emp-runtime dev",
     "dev:mf-host-demo": "pnpm --filter @empjs/mf-host-demo dev",
     "dev:emp-runtime-react-16-app": "pnpm --filter emp-runtime-react-16-app dev"
   },

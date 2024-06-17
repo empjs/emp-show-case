@@ -7,7 +7,8 @@ const isCf = true
 export default defineConfig(store => {
   const ip = store.getLanIp()
   const mfhost = `http://${ip}:8001/emp.js`
-  const runtimeHost = `http://${ip}:3011`
+  // const runtimeHost = `http://${ip}:3011`
+  const runtimeHost = `https://df-react.sc.empjs.dev/lib`
   return {
     html: {
       title: 'Federation Runtime',
